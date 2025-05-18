@@ -10,23 +10,37 @@
 	<p>Peso: <input type="number" asp-for="Peso" step="0.01" /></p>
 	<p><input type="submit" value="Calcular" /></p>
 </form>
-	
+
 <p>Su IMC es: @Model.IMC</p>
 
-@switch (Model.IMC)
+@if(Model.IMC != 0)
 {
-	case < 18:
-		<p>Tu peso es bajo</p>
-		break;
-	case >=18 and <25:
-		<p>Tu peso es bajo</p>
-		break;
-	case >= 25 and < 27:
-		<p>Tu peso es bajo</p>
-		break;
-	case >= 27 and < 30:
-		<p>Tu peso es bajo</p>
-		break;
+	@switch (Model.IMC)
+	{
+		case < 18:
+			<p>Tu peso es bajo</p>
+			break;
+		case >= 18 and < 25:
+			<p>Tu peso es Normal</p>
+			break;
+		case >= 25 and < 27:
+			<p>Tienes sobre peso</p>
+			break;
+		case >= 27 and < 30:
+			<p>Tienes Obesidad Grado I</p>
+			break;
+		case >= 30 and < 40:
+			<p>Tienes Obesidad Grado II</p>
+			break;
+		case >= 40:
+			<p>Tienes Obesidad Grado III</p>
+			break;
+		default:
+			<p>Los valores no son correctos</p>
+			break;
+	}
 }
+
+
 
 
