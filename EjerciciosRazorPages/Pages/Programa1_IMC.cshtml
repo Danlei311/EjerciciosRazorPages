@@ -1,0 +1,32 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.Programa1_IMCModel
+@{
+}
+
+<h3>Programa 1 - IMC</h3>
+<p>Ingrese sus valores para el IMC</p>
+<form method="post">
+	<p>Altura: <input type="number" asp-for="Altura" step="0.01" /></p>
+	<p>Peso: <input type="number" asp-for="Peso" step="0.01" /></p>
+	<p><input type="submit" value="Calcular" /></p>
+</form>
+	
+<p>Su IMC es: @Model.IMC</p>
+
+@switch (Model.IMC)
+{
+	case < 18:
+		<p>Tu peso es bajo</p>
+		break;
+	case >=18 and <25:
+		<p>Tu peso es bajo</p>
+		break;
+	case >= 25 and < 27:
+		<p>Tu peso es bajo</p>
+		break;
+	case >= 27 and < 30:
+		<p>Tu peso es bajo</p>
+		break;
+}
+
+
