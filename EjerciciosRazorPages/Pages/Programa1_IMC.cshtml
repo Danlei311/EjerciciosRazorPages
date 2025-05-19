@@ -6,8 +6,8 @@
 <h3>Programa 1 - IMC</h3>
 <p>Ingrese sus valores para el IMC</p>
 <form method="post">
-	<p>Altura: <input type="number" asp-for="Altura" step="0.01" /></p>
-	<p>Peso: <input type="number" asp-for="Peso" step="0.01" /></p>
+	<p>Altura(m): <input type="number" asp-for="Altura" step="0.01" /></p>
+	<p>Peso(Kg): <input type="number" asp-for="Peso" step="0.01" /></p>
 	<p><input type="submit" value="Calcular" /></p>
 </form>
 
@@ -19,21 +19,27 @@
 	{
 		case < 18:
 			<p>Tu peso es bajo</p>
+			<img src="/img/pesoBajo.png" alt="peso bajo" width="300" height="300" />
 			break;
 		case >= 18 and < 25:
 			<p>Tu peso es Normal</p>
+			<img src="/img/pesoNormal.png" alt="peso normal" width="300" height="300" />
 			break;
 		case >= 25 and < 27:
 			<p>Tienes sobre peso</p>
+			<img src="/img/sobrePeso.png" alt="sobre peso" width="300" height="300" />
 			break;
 		case >= 27 and < 30:
 			<p>Tienes Obesidad Grado I</p>
+			<img src="/img/obesidadGradoI.png" alt="obesidad I" width="300" height="300" />
 			break;
 		case >= 30 and < 40:
 			<p>Tienes Obesidad Grado II</p>
+			<img src="/img/obesidadGrado2.png" alt="obesidad II" width="300" height="300" />
 			break;
 		case >= 40:
 			<p>Tienes Obesidad Grado III</p>
+			<img src="/img/obesidadGrado3.png" alt="Obesidad III" width="300" height="300" />
 			break;
 		default:
 			<p>Los valores no son correctos</p>

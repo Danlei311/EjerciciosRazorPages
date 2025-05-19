@@ -1,0 +1,23 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.Programa4_arregloAleatorioModel
+@{
+}
+<h3>Programa 4 - Números Aleatorios</h3>
+<form method="post">
+    <p><input type="submit" value="Generar" /></p>
+</form>
+
+@if (Model.NumerosAleatorios.Count > 0)
+{
+    <p><strong>Arreglo Aleatorio</strong></p>
+    <p>@string.Join("|", Model.NumerosAleatorios)</p>
+
+    <p><strong>Suma:</strong> @Model.Suma</p>
+    <p><strong>Promedio:</strong> @Model.Promedio.ToString("0.00")</p>
+
+    <p><strong>Arreglo Ordenado</strong></p>
+    <p>@string.Join("|", Model.NumerosOrdenados)</p>
+
+    <p><strong>Moda:</strong> @string.Join(" y ", Model.Modas)</p>
+    <p><strong>Mediana:</strong> @Model.Mediana</p>
+}

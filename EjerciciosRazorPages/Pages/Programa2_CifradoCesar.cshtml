@@ -1,0 +1,27 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.Programa2_CifradoCesarModel
+@{
+}
+<h3>Programa 2 - Cifrado César</h3>
+
+<form method="post">
+    <div>
+        <h3>Cifrar mensaje</h3>
+        <p>Mensaje original: <input type="text" asp-for="MensajeACifrar" /></p>
+        <p>Clave (n): <input type="number" asp-for="ClaveCifrado" min="1" /></p>
+        <p><input type="submit" value="Cifrar" /></p>
+    </div>
+</form>
+
+<p><strong>Mensaje cifrado:</strong> @Model.ResultadoCifrado</p>
+
+<form method="post">
+    <div>
+        <h3>Descifrar mensaje</h3>
+        <p>Mensaje cifrado: <input type="text" asp-for="MensajeADescifrar" /></p>
+        <p>Clave (n): <input type="number" asp-for="ClaveDescifrado" min="1" /></p>
+        <p><input type="submit" value="Descifrar" /></p>
+    </div>
+</form>
+
+<p><strong>Mensaje descifrado:</strong> @Model.ResultadoDescifrado</p>

@@ -1,0 +1,41 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.Programa3_expresionIgualdadModel
+@{
+}
+
+<h3>Programa 3 - (ax + by)^n</h3>
+<p>Introduce los valores de A, B, X, Y y N</p>
+
+<form method="post">
+    <p>a: <input type="number" asp-for="A" step="0.01" /></p>
+    <p>b: <input type="number" asp-for="B" step="0.01" /></p>
+    <p>x: <input type="number" asp-for="X" step="0.01" /></p>
+    <p>y: <input type="number" asp-for="Y" step="0.01" /></p>
+    <p>n: <input type="number" asp-for="N" /></p>
+    <p><input type="submit" value="Calcular" /></p>
+</form>
+
+@if (Model.Resultado != "")
+{
+    <h4>Resultado de (ax + by)^n:</h4>
+    <p>@Model.ResultadoDirecto</p>
+
+    <h2>Segundo Procedimiento</h2>
+    <h4>Pasos:</h4>
+    <ul>
+        @foreach (var paso in Model.Pasos)
+        {
+            <li>@paso</li>
+        }
+        <h5>Resultado: @Model.Resultado</h5>
+    </ul>
+}
+
+@if (Model.Resultado == Model.ResultadoDirecto && Model.Resultado !="" && Model.ResultadoDirecto != "")
+{
+    <h2>Ambos resultados coinciden</h2>
+}
+else if (Model.Resultado != "" && Model.ResultadoDirecto != "")
+{
+    <h2>Los resultados no coinciden</h2>
+}
